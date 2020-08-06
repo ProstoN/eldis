@@ -1,0 +1,16 @@
+{
+  "departments": [
+    {
+      "id": 1,
+      "name": "Elite"
+    },
+    {
+      "id": 2,
+      "name": "Development"
+    },
+    {
+      "id": 3,
+      "name": "Staff"
+    }
+  ]
+}
