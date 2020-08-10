@@ -121,13 +121,7 @@ function EmployeeDetails({match}: RouteComponentProps<TParams>) {
 
     const handleClickDelete = () => {
         const employees = getEmployees()
-        let updatedEmployees = []
-        for(let employee of employees) {
-            if (employee.id !== Number(id)) {
-                updatedEmployees.push(employee)
-            }
-        }
-        setEmployees(updatedEmployees)
+        setEmployees(employees.filter(employee => employee.id !== Number(id)))
         window.location.assign("/employees")
     }
 

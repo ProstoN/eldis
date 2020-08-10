@@ -82,7 +82,7 @@ function DepartmentDetails({match}: RouteComponentProps<TParams>) {
             updatedDepartments.push(department)
         }
         if (id === "new") {
-            departments.push(createNewDepartment(departments))
+            updatedDepartments.push(createNewDepartment(departments))
         }
         setDepartments(updatedDepartments)
         window.location.assign("/departments")
@@ -103,13 +103,7 @@ function DepartmentDetails({match}: RouteComponentProps<TParams>) {
 
     const updateDepartmentsAfterDelete = (): void => {
         const departments = getDepartments();
-        let updatedDepartments = []
-        for(let department of departments) {
-            if (department.id !== Number(id)) {
-                updatedDepartments.push(department)
-            }
-        }
-        setDepartments(updatedDepartments)
+        setDepartments(departments.filter(department => department.id !== Number(id)))
     }
 
     const setDefaultDepartmentForEmployees = () => {
